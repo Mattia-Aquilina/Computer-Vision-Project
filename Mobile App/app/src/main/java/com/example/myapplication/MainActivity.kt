@@ -38,7 +38,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Camera
-import androidx.compose.material.icons.filled.GeneratingTokens
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
@@ -89,10 +88,6 @@ class MainActivity : ComponentActivity() {
                             Detection(this@MainActivity)
                             showBottomNavigation = "user"
                         }
-                        composable("Generation") {
-                            Generation()
-                            showBottomNavigation = "user"
-                        }
                     }
 
                     //USER BOTTOMBAR
@@ -118,7 +113,7 @@ class MainActivity : ComponentActivity() {
                                 Text(text = "Detect")
                             }
                         )
-
+/*
                         // Map Page
                         BottomNavigationItem(
                             selected = navController.currentDestination?.route == "Generation",
@@ -134,7 +129,7 @@ class MainActivity : ComponentActivity() {
                             label = {
                                 Text(text = "Generate")
                             }
-                        )
+                        )*/
                     }
 
                 }
@@ -248,6 +243,7 @@ fun Generation() {
 fun Detection(_context: Context) {
     var pictureUri by remember { mutableStateOf<Uri?>(null) }
     var bitmap by remember { mutableStateOf<Bitmap?>(null) }
+    var result by remember { mutableStateOf<String>("")  }
     var context = _context
 
     Column(
@@ -267,6 +263,8 @@ fun Detection(_context: Context) {
 
 
         ImageUploadButton(onImageSelected = { uri ->
+            bitmap = null
+            result = ""
             pictureUri = uri
             if(uri != null) {
                 val _bitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -296,16 +294,16 @@ fun Detection(_context: Context) {
                     .fillMaxHeight(.7f),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-
-                Text(text = "Results will display here")
-                Text(text = "Fake/real")
-                Text(text = "Time taken:")
+                if(result == "")
+                    Text(text = "Results will display here")
+                else
+                    Text(text = "Results: " + result)
             }
 
             Button(
                 enabled = pictureUri != null,
                 onClick = {
-                      bitmap?.let { Evaluate(it, context) };
+                      bitmap?.let { result = Evaluate(it, context) };
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -321,7 +319,7 @@ fun Detection(_context: Context) {
     // Add a way to upload a picture
 }
 
-fun Evaluate(resized: Bitmap, context: Context): Boolean {
+fun Evaluate(resized: Bitmap, context: Context): String {
 
     //get the image
         val model = TrainedModel3Epochs.newInstance(context)
@@ -355,14 +353,7 @@ fun Evaluate(resized: Bitmap, context: Context): Boolean {
 
         Log.d("MODEL RESULT", classes[argmax!!])
         model.close()
-
-
-// Releases model resources if no longer used.
-        model.close()
-
-        // Releases model resources if no longer used.
-        model.close()
-        return true;
+        return classes[argmax!!];
 }
 
 
@@ -481,7 +472,6 @@ fun ImageUploadButton(onImageSelected: (Uri?) -> Unit, context: Context) {
             }
 
         }
-
         // Button to launch the image picker
 
     }
