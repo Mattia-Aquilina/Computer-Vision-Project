@@ -1,5 +1,5 @@
 # Computer-Vision-Project
-Code for project for the course Computer vision project done by Aquilina Mattia and Angelo Trifelli.
+Code of the Computer vision project done by Aquilina Mattia and Angelo Trifelli.
 
 ## Abstract
 
@@ -21,3 +21,10 @@ pip install tensorflow
 ```bash
 pip install tensorflow-datasets
 ```
+
+## Project structure
+
+The repo si divided in four folders:
+* __Dataset_tools__, containg all the scripts used to build up the dataset. Each script is explained in detail in the readme of the folder.
+* __Mobile App__, containing the Android Studio project of the mobile application, that can be downloaded [Here]().
+* __Scripts__, containg all the scripts used to train and optimize the models. Each script is explained in detail in the readme of the folder.
