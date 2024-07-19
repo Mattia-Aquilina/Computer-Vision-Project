@@ -41,7 +41,7 @@ Different architectures have been explored in order to produce the most accurate
 The obtained result can be summed up in the following table:
 
 | Model | Batch Size | N. Layers Unlocked | Loss | Training Accuracy | Validation Loss | Validation Accuracy |
-|--|--|--|--|--|--|--|--|
+|---|---|---|---|---|---|---|---|
 | v1 | 32 | 0 |0.3722  | 0.8256 |0.6674 | 0.7626| 
 | v2 |  32|  5 |0.3753|  0.8300 | 0.6751|  0.7282 |
 | v3 | 128 | 8 |0.4728 | 0.8172 | 0.8726|  0.7125 |
