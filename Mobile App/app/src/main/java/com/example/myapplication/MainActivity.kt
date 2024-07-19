@@ -295,22 +295,32 @@ fun Detection(_context: Context) {
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 if(result == "")
-                    Text(text = "Results will display here")
+                    Text(text = "Results will display here",
+                        style = MaterialTheme.typography.h5.copy(
+                            fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp
+                    ),)
                 else
-                    Text(text = "Results: " + result)
+                    Text(text = "Results: " + result,
+
+                        style = MaterialTheme.typography.h5.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 25.sp
+                    ),)
             }
 
-            Button(
-                enabled = pictureUri != null,
-                onClick = {
-                      bitmap?.let { result = Evaluate(it, context) };
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp)
-            ) {
-                Text("Check")
-            }
+            if(result == "")
+                Button(
+                    enabled = pictureUri != null,
+                    onClick = {
+                          bitmap?.let { result = Evaluate(it, context) };
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp)
+                ) {
+                    Text("Check")
+                }
 
 
         }
