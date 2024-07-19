@@ -40,11 +40,11 @@ The core of the project was to create a lightweight model that could run on a mo
 Different architectures have been explored in order to produce the most accurate model while dealing with the limited resources of [Google Colab](https://colab.research.google.com/).
 The obtained result can be summed up in the following table:
 
-| Model | Batch Size | N. Layers unlocked | Loss   | Training accuracy | Validation Loss | Validation accuracy |
-|-------|------------|--------------------|--------|-------------------|-----------------|---------------------|
-| v1    |     32     |          0         | 0.3722 |       0.8256      |      0.6674     |        0.7626       |
-| v2    |     32     |          5         | 0.3753 |       0.8300      |      0.6751     |        0.7282       |
-| v3    |     32     |          8         | 0.4728 |       0.8172      |      0.8726     |        0.7125       |
+| Model | Epochs | Batch Size | N. Layers unlocked | Loss   | Training accuracy | Validation Loss | Validation accuracy |
+|-------|--------|------------|--------------------|--------|-------------------|-----------------|---------------------|
+| v1    |    8   |    32      |          5         | 0.3722 |       0.8256      |      0.6674     |        0.7626       |
+| v2    |    5   |    32      |          5         | 0.3753 |       0.8300      |      0.6751     |        0.7282       |
+| v3    |    5   |    32      |          8         | 0.4728 |       0.8172      |      0.8726     |        0.7125       |
 
 To further explore the scripts used to implement this section, please consult the specific readme found at this [link](https://github.com/Mattia-Aquilina/Computer-Vision-Project/tree/main/Scripts).
 
