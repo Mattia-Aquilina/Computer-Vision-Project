@@ -44,6 +44,13 @@ android {
         }
     }
     namespace = "com.example.jetpackcomposedemo"
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src\\main\\assets", "src\\main\\assets")
+            }
+        }
+    }
 }
 
 
@@ -68,7 +75,9 @@ dependencies {
     implementation("com.google.accompanist:accompanist-insets:0.17.0")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.17.0")
     implementation("io.coil-kt:coil-compose:2.5.0")
-
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation("androidx.compose.ui:ui:1.6.0-beta02")
     implementation("androidx.compose.material3:material3:1.2.0-alpha12")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-rc01")
