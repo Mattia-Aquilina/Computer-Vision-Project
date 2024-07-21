@@ -70,10 +70,11 @@ It offers two main features: _Detection_ and _Evaluation_.
 
 The _Detection_ feature, accessible through a specific screen, allows the user to evaluate an image using one of the two models offered by the application. Here is an example of the use of this feature:
 
-![](/ReadmeMedia/appSample.gif)
+<img src="/ReadmeMedia/appSample.gif"  height="300">
 
 The second feature is _Evaluation_. It allows the user to benchmark the models on the test set, which is loaded into the application as an asset. It provides information on _mean inference time_ and _total inference time_. Here follows a screenshot of the screen from which the user can perform the evaluation:
 
-![](/ReadmeMedia/eval.gif)
+<img src="/ReadmeMedia/eval.gif"  height="300">
+
 
 
