@@ -79,7 +79,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 val models = arrayOf("Full Model", "Pruned Model")
-val REJ_SCORE = 0.5f
+val REJ_SCORE = 0.55f
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
