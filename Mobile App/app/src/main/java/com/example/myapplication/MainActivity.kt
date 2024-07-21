@@ -79,7 +79,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 val models = arrayOf("Full Model", "Pruned Model")
-val REJ_SCORE = 0.6f
+val REJ_SCORE = 0.5f
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -578,7 +578,7 @@ fun _Evaluate(resized: Bitmap, context: Context, model: FullModel): Pair<String,
     if(result[argmax!!]> REJ_SCORE)
         return(Pair<String, Double>(classes[argmax!!], totalTime))
     else
-        return(Pair<String, Double>("UNKOWN", totalTime))
+        return(Pair<String, Double>("UNKNOWN", totalTime))
 }
 
 fun _Evaluate(resized: Bitmap, context: Context, model: PrunedModel): Pair<String,Double> {
@@ -620,7 +620,10 @@ fun _Evaluate(resized: Bitmap, context: Context, model: PrunedModel): Pair<Strin
     Log.d("MODEL RESULT", classes[argmax!!])
     model.close()
 
-    return(Pair<String, Double>(classes[argmax!!], totalTime))
+    if(result[argmax!!]> REJ_SCORE)
+        return(Pair<String, Double>(classes[argmax!!], totalTime))
+    else
+        return(Pair<String, Double>("UNKNOWN", totalTime))
 }
 fun Evaluate(resized: Bitmap, context: Context, modelC: Int): Pair<String,Double> {
     if(modelC == 0){
