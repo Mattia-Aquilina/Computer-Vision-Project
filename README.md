@@ -11,18 +11,19 @@ In this project, we aim to address the challenge of deep fake detection on mobil
 
 ## Pre-requisites 
 
-In order to train and use the model you need to install the following python libraries:
+In order to train, use the model and generate the charts you need to install the following python libraries:
 * __tensorflow__
 * __tensorflow-datasets__
+* __tensorflow-model-optimization__
+* __pandas__
+* __numpy__
+* __matplotlib__
+* __tqdm__
 
-Both libraries can be easily installed with __pip__: 
+All libraries can be easily installed with __pip__: 
 
 ```bash
-pip install tensorflow
-```
-
-```bash
-pip install tensorflow-datasets
+pip install tensorflow tensorflow-dataset tensorflow-model-optimization pandas numpy matplotlib tqdm
 ```
 
 ## Project structure
