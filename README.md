@@ -19,11 +19,12 @@ In order to train, use the model and generate the charts you need to install the
 * __numpy__
 * __matplotlib__
 * __tqdm__
+* __scikit-learn__
 
 All libraries can be easily installed with __pip__: 
 
 ```bash
-pip install tensorflow tensorflow-dataset tensorflow-model-optimization pandas numpy matplotlib tqdm
+pip install tensorflow tensorflow-datasets tensorflow-model-optimization pandas numpy matplotlib tqdm scikit-learn
 ```
 
 ## Project structure
