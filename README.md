@@ -29,10 +29,11 @@ pip install tensorflow tensorflow-datasets tensorflow-model-optimization pandas 
 
 ## Project structure
 
-The repo si divided in three folders:
-* __Dataset_tools__, containg all the scripts used to build up the dataset. Each script is explained in detail in the readme of the folder.
-* __Mobile App__, containing the Android Studio project of the mobile application, that can be downloaded [Here]("Mobile%20App/app/build/outputs/apk/debug/app-debug.apk").
-* __Scripts__, containg all the scripts used to train and optimize the models. Each script is explained in detail in the readme of the folder.
+The repo is divided in four folders:
+* __Dataset_tools__, containg all the scripts used to build up the dataset. Each script is explained in detail in the readme of this [folder](/Dataset_tools/README.md).
+* __Mobile App__, containing the Android Studio project of the mobile application, that can be downloaded [Here](https://drive.google.com/file/d/1yDP8LOrJxwrRU0VhX4SxKTSmfyUFBUKq/view?usp=sharing).
+* __Scripts__, containg all the scripts used to train and optimize the models. Each script is explained in detail in the readme of this [folder](/Scripts/README.md).
+* __Ai Model__, containing the two models developed for the purpose of this project, and their corresponding TfLite version.
 
 
 ## Dataset
